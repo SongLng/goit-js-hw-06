@@ -8,11 +8,9 @@ const ingredients = [
 ];
 const allIngredients = document.querySelector("#ingredients");
 
-const makeList = [...ingredients].forEach((ingredient) => {
-  const itemEl = document.createElement("li");
-  itemEl.classList.add("item");
-  itemEl.textContent = ingredient;
-  allIngredients.appendChild(itemEl);
-});
+const makeList = ingredients.reduce(
+  (str, item) => str + `<li>${item}</li>`,
+  ""
+);
 
-console.log(allIngredients);
+allIngredients.innerHTML = makeList;

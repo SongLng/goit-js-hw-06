@@ -15,9 +15,9 @@ function onFormSubmit(event) {
   };
 
   if (mail === "") {
-    alert("写一封电子邮件");
+    alert("Please input your email");
   } else if (password === "") {
-    alert("输入密码");
+    alert("Please input your password");
   } else {
     const formData = new FormData(event.currentTarget);
     formData.forEach((value, name) => {
