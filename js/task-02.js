@@ -6,11 +6,12 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-const allIngredients = document.querySelector("#ingredients");
 
-const makeList = ingredients.reduce(
-  (str, item) => str + `<li>${item}</li>`,
-  ""
-);
+const makeList = ingredients.map((ingredient) => {
+  const listItem = document.createElement("li");
+  listItem.classList.add("item");
+  listItem.textContent = ingredient;
+  return listItem;
+});
 
-allIngredients.innerHTML = makeList;
+document.querySelector("#ingredients").append(...makeList);
